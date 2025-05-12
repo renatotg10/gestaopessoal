@@ -37,7 +37,7 @@ class MyResetPassword extends Notification
      */
     public function toMail(object $notifiable): MailMessage
     {
-        $url = url(config('app.url') . '/password/reset/' . $this->token . '?email=' . urlencode($notifiable->getEmailForPasswordReset()));
+        $url = url(config('app.url') . '/reset-password/' . $this->token . '?email=' . urlencode($notifiable->getEmailForPasswordReset()));
 
         return (new MailMessage)
             ->subject(Lang::get('Notificação -- Personalizada -- de Redefinição de Senha'))
